@@ -28,12 +28,10 @@ func main() {
 }
 
 func isDivisible(number int, primeNumbers []int) bool {
-	isDivisible := false
 	for _, value := range primeNumbers {
 		if math.Mod(float64(number), float64(value)) == 0 {
-			isDivisible = true
-			break
+			return true
 		}
 	}
-	return isDivisible
+	return false
 }
