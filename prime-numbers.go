@@ -6,12 +6,14 @@ import (
 )
 
 func main() {
-	firstValue := 2
+	const firstPrimeNumber = 2
 
 	primeNumbers := make([]int, 1, 100)
-	primeNumbers[0] = firstValue
+	primeNumbers[0] = firstPrimeNumber
 
-	currentValue := firstValue
+	currentValue := firstPrimeNumber
+
+	fmt.Println("Calculating first 100 prime numbers...")
 
 	for len(primeNumbers) < 100 {
 		currentValue++
@@ -20,11 +22,10 @@ func main() {
 
 		if !isDivisible {
 			primeNumbers = append(primeNumbers, currentValue)
-			fmt.Println(currentValue)
 		}
 	}
 
-	fmt.Println(primeNumbers)
+	fmt.Println("The prime numbers are:", primeNumbers)
 }
 
 func isDivisible(number int, primeNumbers []int) bool {
